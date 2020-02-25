@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- Jumbotron Row Start -->
+<div class="row jumbotron-fluid d-flex justify-content-center" id="jumbotron">
+<!--    <div class="col-12 d-flex justify-content-center align-content-center mt-5">-->
+        <h1 class="mt-5" id="companyTitle">Coffee Shop</h1>
+<!--    </div>-->
+</div>
+<!-- Jumbotron Row End -->
+
 <!-- Main Container Start -->
 <div class="container" id="containerBody">
-
-    <!-- Jumbotron Row Start -->
-    <div class="row" id="jumbotron">
-        <div class="col-12 d-flex justify-content-center align-content-center mt-3">
-            <h1 id="companyTitle">Coffee Shop</h1>
-        </div>
-    </div>
-    <!-- Jumbotron Row End -->
 
     <!-- Coffee Row Start -->
     <div class="row border border-dark mt-5" id="coffeeRow">
@@ -72,46 +73,46 @@
     <!-- Coffee Row End -->
 
     <!-- Pastries Row Start -->
-    <div class="row border border-dark mt-5" id="pastriesRow">
+    <div class="row border border-dark mt-5" id="pastryRow">
 
-        <!-- Pastries Title -->
-        <section class="col-12 border-bottom border-dark text-center" id="pastriesTitle">
+        <!-- Pastry Title -->
+        <section class="col-12 border-bottom border-dark text-center" id="pastryTitle">
             <h1>Pastries!</h1>
         </section>
 
-        <!-- Pastries List -->
-        <section class="col-8 border-right border-dark" id="pastriesList">
-            <div id="pastriesId" class="row d-flex flex-wrap align-items-end">
-                <!-- Pastries Selection shows here -->
+        <!-- Pastry List -->
+        <section class="col-9 border-right border-dark" id="pastryList">
+            <div id="pastryId" class="row d-flex flex-wrap align-items-end">
+                <!-- pastry Selection shows here -->
             </div>
         </section>
 
         <!-- Pastry Input -->
-        <section class="col-4" id="pastriesInput">
+        <section class="col-3" id="pastryInput">
             <div>
-                <form>
-                    <label for="pastries-selection">Pastry Type</label>
-                    <select id="pastries-selection" class="custom-select">
+                <form name="form2">
+                    <label for="flavor-selection">Pastry Type</label>
+                    <select id="flavor-selection" class="custom-select">
                         <option selected>All</option>
-                        <option>Sweet</option>
-                        <option>Savory</option>
-                        <option>Frozen</option>
+                        <option>sweet</option>
+                        <option>savory</option>
+                        <option>frozen</option>
                     </select>
-                    <label for="pastriesName" class="mt-2">Pastry Name</label>
-                    <input id="pastriesName" class="form-control" type="text" placeholder="Default input">
+                    <label for="pastryName" class="mt-2">Pastry Name</label>
+                    <input id="pastryName" class="form-control" type="text" placeholder="Default input" onkeyup="">
                 </form>
                 <hr>
                 <form>
-                    <label for="userPastries">Pastries Type</label>
-                    <select id="userPastries" class="custom-select">
+                    <label for="userFlavor">pastry Type</label>
+                    <select id="userFlavor" class="custom-select">
                         <option selected>All</option>
-                        <option>light</option>
-                        <option>medium</option>
-                        <option>dark</option>
+                        <option>sweet</option>
+                        <option>savory</option>
+                        <option>frozen</option>
                     </select>
                     <label for="userPastryName" class="mt-2">Pastry Name</label>
                     <input id="userPastryName" class="form-control" type="text" placeholder="Default input">
-                    <button type="button" class="btn btn-lg btn-block mt-2">Submit</button>
+                    <button type="button" class="btn btn-lg btn-block mt-2" id="userPastrySug">Submit</button>
                 </form>
             </div>
         </section>
