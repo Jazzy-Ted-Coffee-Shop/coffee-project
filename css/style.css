@@ -2,11 +2,11 @@
 body {
     background-color: #e5dbce;
     color: #452711;
+    background-image:url("../pup paw.png");
 }
 
 #jumbotron {
-    height: 80vh;
-    max-width: 75vw;
+    height: 100vh;
     background-image: url("../bonding-cold-cozy-dog-374845.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +15,7 @@ body {
     font-size: 3em;
 }
 
-#coffeeRow, #pastriesRow, #dogTreatsRow {
+#coffeeRow, #pastryRow, #dogTreatsRow {
     background-color: #86735d;
 }
 #coffeeInput hr {

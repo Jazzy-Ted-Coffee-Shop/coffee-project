@@ -52,9 +52,9 @@ function updateCoffees(e) {
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     var roast = document.forms.form1.coffeeName.value;
-    console.log("success");
-    console.log(roast);
-    console.log(selectedRoast);
+    // console.log("success");
+    // console.log(roast);
+    // console.log(selectedRoast);
     coffees.forEach(function(coffee) {
         if ((coffee.roast === selectedRoast || selectedRoast === "all" )&& coffee.name.toLowerCase().includes(roast.toLowerCase())) {
             filteredCoffees.push(coffee);
@@ -93,3 +93,97 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('change', updateCoffees);
 userSubmit.addEventListener('click',test);
 
+
+
+document.getElementById("pastryName").addEventListener('click', pastryThing, false);
+function pastryThing() {
+    document.addEventListener("keyup", updatePastries, false);
+    document.getElementById("pastryName").addEventListener("change", removePastry, false);
+
+}
+function removePastry() {
+    document.removeEventListener("keyup", updatePastries, false);
+    document.getElementById("pastryName").removeEventListener("change", removePastry, false);
+
+}
+
+function test(e){
+    e.preventDefault();
+    let userAdd = {};
+    let flavor = document.querySelector('#userFlavor');
+    let name = document.querySelector('#userPastryName');
+    let uppercaseName = name.value.replace(name.value[0], name.value[0].toUpperCase());
+    console.log(uppercaseName);
+    userAdd.id = (pastrys.length) + 1;
+    userAdd.name = uppercaseName;
+    userAdd.flavor = flavor.value;
+    console.log(userAdd);
+    pastrys.push(userAdd);
+    tpbody.innerHTML = renderpastrys(pastrys);
+
+}
+
+function renderPastry(pastry) {
+    var html = "";
+    html += "<span class='col-5 mx-2 p-0 my-2 animated flipInX'>";
+    html += "<h1 class='d-inline-block mr-1'>" + pastry.name + "</h1>";
+    html += "<p class='d-inline-block mr-2'>" + pastry.flavor + "</p>";
+    html += "</span>";
+
+    return html;
+}
+
+function renderpastrys(pastrys) {
+    var html = '';
+    for(var i = pastrys.length - 1; i >= 0; i--) {
+        html += renderPastry(pastrys[i]);
+    }
+    // console.log(html);
+    return html;
+}
+
+function updatePastries(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    var selectedFlavor = flavorSelection.value;
+    var filteredPastries = [];
+    var flavor = document.forms.form2.pastryName.value;
+    // console.log("success");
+    console.log(flavor);
+    console.log(selectedFlavor);
+    pastrys.forEach(function(pastry) {
+        if ((pastry.flavor === selectedFlavor || selectedFlavor === "All" )&& pastry.name.toLowerCase().includes(flavor.toLowerCase())) {
+            filteredPastries.push(pastry);
+        }
+    });
+    console.log(filteredPastries);
+    tpbody.innerHTML = renderpastrys(filteredPastries);
+}
+
+// from http://www.ncausa.org/About-pastry/pastry-Roasts-Guide
+var pastrys = [
+    {id: 1, name: 'Cheese Danish', flavor: 'sweet'},
+    {id: 2, name: 'Coffee Cake', flavor: 'sweet'},
+    {id: 3, name: 'Chocolate Chip Cookie', flavor: 'sweet'},
+    {id: 4, name: 'Lemon Bars', flavor: 'sweet'},
+    {id: 5, name: 'Marble Pound Cake', flavor: 'sweet'},
+    {id: 6, name: 'Sugar-Free Brownies', flavor: 'sweet'},
+    {id: 7, name: 'Sausage Kolache', flavor: 'savory'},
+    {id: 8, name: 'Bacon,Egg,Cheese Crossaint', flavor: 'savory'},
+    {id: 9, name: 'Spinach Quiche', flavor: 'savory'},
+    {id: 10, name: 'Avocado Toast', flavor: 'savory'},
+    {id: 11, name: 'Vanilla Ice Cream', flavor: 'frozen'},
+    {id: 12, name: 'Chocolate', flavor: 'frozen'},
+    {id: 13, name: 'Strawberry', flavor: 'frozen'},
+    {id: 14, name: 'Rainbow Sherbet', flavor: 'frozen'},
+];
+
+var tpbody = document.querySelector('#pastryId');
+var submitPButton = document.getElementById('flavor-selection');
+var flavorSelection = document.querySelector('#flavor-selection');
+let userPSubmit = document.querySelector('#userPastrySug');
+
+
+tpbody.innerHTML = renderpastrys(pastrys);
+
+submitPButton.addEventListener('change', updatePastries);
+userPSubmit.addEventListener('click',test);
