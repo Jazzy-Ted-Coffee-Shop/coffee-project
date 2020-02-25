@@ -1,18 +1,10 @@
 "use strict";
 
-document.getElementById("coffeeName").addEventListener('click', coffeeThing, false);
-function coffeeThing() {
-    document.addEventListener("keyup", updateCoffees, false);
-    document.getElementById("coffeeName").addEventListener("change", removeCoffee, false);
+//registers typing into input
+document.getElementById("coffeeName").addEventListener("keyup", updateCoffees);
 
-}
-function removeCoffee() {
-    document.removeEventListener("keyup", updateCoffees, false);
-    document.getElementById("coffeeName").removeEventListener("change", removeCoffee, false);
-
-}
-
-function test(e){
+//function to add user suggested coffee
+function addCoffee(e){
     e.preventDefault();
     let userAdd = {};
     let roast = document.querySelector('#userRoast');
@@ -25,28 +17,30 @@ function test(e){
     console.log(userAdd);
     coffees.push(userAdd);
     tbody.innerHTML = renderCoffees(coffees);
-
 }
 
+//Converts selected coffee to HTML elements
 function renderCoffee(coffee) {
     var html = "";
     html += "<span class='col-5 mx-2 p-0 my-2 animated flipInX'>";
     html += "<h1 class='d-inline-block mr-1'>" + coffee.name + "</h1>";
     html += "<p class='d-inline-block mr-2'>" + coffee.roast + "</p>";
     html += "</span>";
-
+    console.log(html);
     return html;
 }
 
+//Converts HTML elements to one big string
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
-    // console.log(html);
+    console.log(html);
     return html;
 }
 
+//Sorts thru coffee array and adds to HTML
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -60,7 +54,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    console.log(filteredCoffees);
+    // console.log(filteredCoffees);
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
@@ -82,32 +76,26 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+//variables for coffee
 var tbody = document.querySelector('#coffeeid');
 var submitButton = document.getElementById('roast-selection');
 var roastSelection = document.querySelector('#roast-selection');
 let userSubmit = document.querySelector('#userCoffeeSug');
-
-
 tbody.innerHTML = renderCoffees(coffees);
-
 submitButton.addEventListener('change', updateCoffees);
-userSubmit.addEventListener('click',test);
+userSubmit.addEventListener('click',addCoffee);
 
 
 
-document.getElementById("pastryName").addEventListener('click', pastryThing, false);
-function pastryThing() {
-    document.addEventListener("keyup", updatePastries, false);
-    document.getElementById("pastryName").addEventListener("change", removePastry, false);
 
-}
-function removePastry() {
-    document.removeEventListener("keyup", updatePastries, false);
-    document.getElementById("pastryName").removeEventListener("change", removePastry, false);
 
-}
+//Pastry section
 
-function test(e){
+//registers typing into input
+document.getElementById("pastryName").addEventListener('keyup', updatePastries);
+
+//function to add user suggested pastry
+function addPastry(e){
     e.preventDefault();
     let userAdd = {};
     let flavor = document.querySelector('#userFlavor');
@@ -120,9 +108,9 @@ function test(e){
     console.log(userAdd);
     pastrys.push(userAdd);
     tpbody.innerHTML = renderpastrys(pastrys);
-
 }
 
+//Converts selected pastry to HTML elements
 function renderPastry(pastry) {
     var html = "";
     html += "<span class='col-5 mx-2 p-0 my-2 animated flipInX'>";
@@ -133,6 +121,7 @@ function renderPastry(pastry) {
     return html;
 }
 
+//Converts HTML elements to one big string
 function renderpastrys(pastrys) {
     var html = '';
     for(var i = pastrys.length - 1; i >= 0; i--) {
@@ -142,6 +131,7 @@ function renderpastrys(pastrys) {
     return html;
 }
 
+//Sorts thru pastry array and adds to HTML
 function updatePastries(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedFlavor = flavorSelection.value;
@@ -177,13 +167,11 @@ var pastrys = [
     {id: 14, name: 'Rainbow Sherbet', flavor: 'frozen'},
 ];
 
+//variables for coffee
 var tpbody = document.querySelector('#pastryId');
 var submitPButton = document.getElementById('flavor-selection');
 var flavorSelection = document.querySelector('#flavor-selection');
 let userPSubmit = document.querySelector('#userPastrySug');
-
-
 tpbody.innerHTML = renderpastrys(pastrys);
-
 submitPButton.addEventListener('change', updatePastries);
-userPSubmit.addEventListener('click',test);
+userPSubmit.addEventListener('click',addPastry);

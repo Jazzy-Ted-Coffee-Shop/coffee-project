@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CAWFFEEE</title>
+    <title>PAWFFEE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- Jumbotron Row Start -->
-<div class="row jumbotron-fluid d-flex justify-content-center" id="jumbotron">
-<!--    <div class="col-12 d-flex justify-content-center align-content-center mt-5">-->
-        <h1 class="mt-5" id="companyTitle">Coffee Shop</h1>
-<!--    </div>-->
+<div class="row jumbotron-fluid d-flex flex-column align-content-center" id="jumbotron">
+
+        <h1 class="mt-5" id="companyTitle">Beans and Barkery</h1>
+        <h1 class="mt-2 text-center" id="companySubTitle">Pet Friendly Cafe</h1>
 </div>
 <!-- Jumbotron Row End -->
 
@@ -25,21 +27,26 @@
     <div class="row border border-dark mt-5" id="coffeeRow">
 
         <!-- Coffee Title -->
-        <section class="col-12 border-bottom border-dark text-center" id="coffeeTitle">
-            <h1>Coffee!</h1>
+        <section class="col-12 border-bottom border-dark text-center my-2" id="coffeeTitle">
+
+            <h1>Coffee Types</h1>
+
         </section>
 
         <!-- Coffee List -->
         <section class="col-8 border-right border-dark" id="coffeeList">
+
             <div id="coffeeid" class="row d-flex flex-wrap align-items-end">
                 <!-- Coffee Selection shows here -->
             </div>
+
         </section>
 
         <!-- Coffee Input -->
         <section class="col-4" id="coffeeInput">
             <div>
 
+                <!-- Top Coffee Form -->
                 <form name="form1">
                     <label for="roast-selection">Roast Type</label>
                     <select id="roast-selection" class="custom-select">
@@ -48,10 +55,14 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
+
                     <label for="coffeeName" class="mt-2">Coffee Name</label>
                     <input id="coffeeName" class="form-control" type="search" placeholder="Coffee Name" onkeyup="">
                 </form>
-                <hr>
+
+                <hr class="mt-4">
+                <p class="text-center suggestion">Add a Suggestion!</p>
+                <!-- Bottom Coffee Form -->
                 <form>
                     <label for="userRoast">Roast Type</label>
                     <select id="userRoast" class="custom-select">
@@ -59,8 +70,10 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
+
                     <label for="userCoffeeName" class="mt-2">Coffee Name</label>
                     <input id="userCoffeeName" class="form-control" type="search" placeholder="Coffee Name">
+
                     <button type="submit" class="btn  btn-lg btn-block mt-2" id="userCoffeeSug">Submit</button>
                 </form>
             </div>
@@ -68,7 +81,42 @@
 
 
         <!-- Coffee Size -->
-        <section class="col-12" id="coffeeSizes"></section>
+        <section class="col-12 text-center border border-dark my-2" id="coffeeSizesTitle">Choose Your Coffee Size</section>
+
+        <section class="col-12" id="coffeeSizes">
+            <div class="card-deck">
+
+                <!-- Small Card -->
+                <div class="card">
+                    <img src="dog-sits-on-green-grass-2737393.jpg" class="card-img-top" alt="small dog">
+                    <div class="card-body">
+                        <h4 class="card-title">Small</h4>
+                        <p class="card-text">Whether you need a small pick me up or enjoy big love in small packages, this is the right one for you!</p>
+                        <a href="#" class="btn">Add to Order</a>
+                    </div>
+                </div>
+
+                <!-- Medium Card -->
+                <div class="card">
+                    <img src="black-and-white-dog-1938126.jpg" class="card-img-top" alt="Medium Dog">
+                    <div class="card-body">
+                        <h4 class="card-title">Medium</h4>
+                        <p class="card-text">Not overly large but not too small either. This is the perfect size for all your coffee fixes!</p>
+                        <a href="#" class="btn">Add to Order</a>
+                    </div>
+                </div>
+
+                <!-- Large Card -->
+                <div class="card">
+                    <img src="adorable-animal-breed-canine-351406.jpg" class="card-img-top" alt="Large Dog">
+                    <div class="card-body">
+                        <h4 class="card-title">Large</h4>
+                        <p class="card-text">Having trouble waking up? Our large is perfect for helping you get up and moving about!</p>
+                        <a href="#" class="btn">Add to Order</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <!-- Coffee Row End -->
 
@@ -76,20 +124,26 @@
     <div class="row border border-dark mt-5" id="pastryRow">
 
         <!-- Pastry Title -->
-        <section class="col-12 border-bottom border-dark text-center" id="pastryTitle">
-            <h1>Pastries!</h1>
+        <section class="col-12 border-bottom border-dark text-center my-2" id="pastryTitle">
+
+            <h1>Delicious Pastries</h1>
+
         </section>
 
         <!-- Pastry List -->
         <section class="col-9 border-right border-dark" id="pastryList">
+
             <div id="pastryId" class="row d-flex flex-wrap align-items-end">
                 <!-- pastry Selection shows here -->
             </div>
+
         </section>
 
         <!-- Pastry Input -->
         <section class="col-3" id="pastryInput">
             <div>
+
+                <!-- Top Pastry Form -->
                 <form name="form2">
                     <label for="flavor-selection">Pastry Type</label>
                     <select id="flavor-selection" class="custom-select">
@@ -98,20 +152,26 @@
                         <option>savory</option>
                         <option>frozen</option>
                     </select>
+
                     <label for="pastryName" class="mt-2">Pastry Name</label>
-                    <input id="pastryName" class="form-control" type="text" placeholder="Default input" onkeyup="">
+                    <input id="pastryName" class="form-control" type="text" placeholder="Pastry Name" onkeyup="">
                 </form>
-                <hr>
+
+                <hr class="mt-4">
+                <p class="text-center suggestion">Add a Suggestion!</p>
+
+                <!-- Bottom Pastry Form -->
                 <form>
                     <label for="userFlavor">pastry Type</label>
                     <select id="userFlavor" class="custom-select">
-                        <option selected>All</option>
                         <option>sweet</option>
                         <option>savory</option>
                         <option>frozen</option>
                     </select>
+
                     <label for="userPastryName" class="mt-2">Pastry Name</label>
-                    <input id="userPastryName" class="form-control" type="text" placeholder="Default input">
+                    <input id="userPastryName" class="form-control" type="text" placeholder="Pastry Name">
+
                     <button type="button" class="btn btn-lg btn-block mt-2" id="userPastrySug">Submit</button>
                 </form>
             </div>
@@ -121,67 +181,60 @@
     <!-- Pastries Row End -->
 
     <!-- Dog Treats Row Start -->
-    <div class="row border border-dark mt-5" id="dogTreatsRow">
+    <div class="row border border-dark my-5" id="dogTreatsRow">
 
         <!-- Dog Treats Title -->
-        <section class="col-12 border-bottom border-dark text-center" id="dogTreatsTitle">
+        <section class="col-12 border-bottom border-dark text-center my-2" id="dogTreatsTitle">
             <h1>Dog Treats!</h1>
         </section>
 
         <!-- Dog Treats Cards -->
         <div class="card-deck">
 
+            <!-- Top Row of Cards -->
             <div class="card">
-                <img src="cookie.jpeg" class="card-img-top" alt="...">
+                <img src="cookie.jpeg" class="card-img-top" alt="dog cookie treat">
                 <div class="card-body">
-                    <h5 class="card-title">Pumpkin Macaron</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">Pumpkin Macaroon</h5>
+                    <p class="card-text">Crispy pumpkin macaroons with a crunchy peanut butter filling. No four-legged companion will deny this crispy treat! </p>
                     <a href="#" class="btn">Add to Order</a>
                 </div>
             </div>
 
-
             <div class="card">
-                <img src="cake.jpeg" class="card-img-top" alt="...">
+                <img src="cake.jpeg" class="card-img-top" alt="dog cake treat" id="dogCakeImg">
                 <div class="card-body">
                     <h5 class="card-title">Blueberry Carrot Cake</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Soft and delicious carrot cake with a sugar-free frosting and topped with fresh blueberries!</p>
                     <a href="#" class="btn">Add to Order</a>
                 </div>
             </div>
+        </div>
 
-
+        <!-- Bottom Row of Cards -->
+        <div class="card-deck">
             <div class="card">
-                <img src="jerky.jpeg" class="card-img-top" alt="...">
+                <img src="jerky.jpeg" class="card-img-top" alt="dog jerky treat">
                 <div class="card-body">
                     <h5 class="card-title">Salmon Jerky</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Fresh salmon jerky that is a tough and chewy treat for all sizes!</p>
                     <a href="#" class="btn">Add to Order</a>
                 </div>
             </div>
 
-
             <div class="card">
-                <img src="puppuccino.jpg" class="card-img-top" alt="...">
+                <img src="puppuccino.jpg" class="card-img-top" alt="dog puppuccino" id="dogPuppucinoImg">
                 <div class="card-body">
                     <h5 class="card-title">Puppuccino</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="#" class="btn">Add to Order</a>
                 </div>
             </div>
-
         </div>
 
 
     </div>
     <!-- Dog Treats Row End -->
-
-    <!-- Footer Start -->
-    <footer>
-
-    </footer>
-    <!-- Footer End -->
-
 
 </div>
 
