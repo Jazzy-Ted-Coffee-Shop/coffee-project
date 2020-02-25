@@ -10,11 +10,11 @@ function addCoffee(e){
     let roast = document.querySelector('#userRoast');
     let name = document.querySelector('#userCoffeeName');
     let upperName = name.value.replace(name.value[0], name.value[0].toUpperCase());
-    console.log(upperName);
+    // console.log(upperName);
     userAdd.id = (coffees.length) + 1;
     userAdd.name = upperName;
     userAdd.roast = roast.value;
-    console.log(userAdd);
+    // console.log(userAdd);
     coffees.push(userAdd);
     tbody.innerHTML = renderCoffees(coffees);
 }
@@ -26,7 +26,7 @@ function renderCoffee(coffee) {
     html += "<h1 class='d-inline-block mr-1'>" + coffee.name + "</h1>";
     html += "<p class='d-inline-block mr-2'>" + coffee.roast + "</p>";
     html += "</span>";
-    console.log(html);
+    // console.log(html);
     return html;
 }
 
@@ -36,7 +36,7 @@ function renderCoffees(coffees) {
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
-    console.log(html);
+    // console.log(html);
     return html;
 }
 
@@ -101,11 +101,11 @@ function addPastry(e){
     let flavor = document.querySelector('#userFlavor');
     let name = document.querySelector('#userPastryName');
     let uppercaseName = name.value.replace(name.value[0], name.value[0].toUpperCase());
-    console.log(uppercaseName);
+    // console.log(uppercaseName);
     userAdd.id = (pastrys.length) + 1;
     userAdd.name = uppercaseName;
     userAdd.flavor = flavor.value;
-    console.log(userAdd);
+    // console.log(userAdd);
     pastrys.push(userAdd);
     tpbody.innerHTML = renderpastrys(pastrys);
 }
@@ -138,14 +138,14 @@ function updatePastries(e) {
     var filteredPastries = [];
     var flavor = document.forms.form2.pastryName.value;
     // console.log("success");
-    console.log(flavor);
-    console.log(selectedFlavor);
+    // console.log(flavor);
+    // console.log(selectedFlavor);
     pastrys.forEach(function(pastry) {
         if ((pastry.flavor === selectedFlavor || selectedFlavor === "All" )&& pastry.name.toLowerCase().includes(flavor.toLowerCase())) {
             filteredPastries.push(pastry);
         }
     });
-    console.log(filteredPastries);
+    // console.log(filteredPastries);
     tpbody.innerHTML = renderpastrys(filteredPastries);
 }
 
